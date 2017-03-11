@@ -1,0 +1,184 @@
+<div>
+  <div layout="row" layout-wrap class="search_field_container">
+    <!-- Target switch -->
+    <div flex="none">
+      <md-menu  md-offset="0 45">
+        <md-button class="md-raised md-primary no_shadow no_margin" ng-click="$mdOpenMenu($event)">
+          {{(currentSearchTarget == searchTargets.investor?'TRANS_BY_INVESTORS':'TRANS_BY_PROJECTS') | translate}}
+          <md-icon class="material-icons md-light "> keyboard_arrow_down
+          </md-icon>
+        </md-button>
+        <md-menu-content width="2" class="header_user_menu">
+          <md-menu-item>
+            <md-button ng-click="onSearchTargetChanged(searchTargets.project)">
+              <img src="themes/default/resources/icons/estate_icon.png" class="size_20x20" />
+              {{'TRANS_BY_PROJECTS' | translate}}
+            </md-button>
+          </md-menu-item>
+          <md-menu-item>
+            <md-button ng-click="onSearchTargetChanged(searchTargets.investor)">
+              <img src="themes/default/resources/icons/investor_icon.png" class="size_20x20" />
+              {{'TRANS_BY_INVESTORS' | translate}}
+            </md-button>
+          </md-menu-item>
+        </md-menu-content>
+      </md-menu>
+    </div>
+    <!-- End Target switch -->
+
+    <!-- Search bar -->
+    <div flex>
+      <input class="search_bar" model="searchTerm" ng-enter="search()" />
+    </div>
+    <div flex="none">
+      <md-button class="md-raised md-primary no_shadow no_margin search_bar_button" ng-click="search()">
+        <md-icon class="material-icons md-light "> search
+        </md-icon>
+      </md-button>
+    </div>
+    <!-- Search Bar -->
+  </div>
+
+  <!-- Search options -->
+  <div layout="row" layout-wrap class="search_tools" ng-if="(!config || (!config.hideSearchOptions)) && currentSearchTarget == searchTargets.project">
+    <div flex="none">
+      <div class="search_tools_item" layout="row" layout-align="start center"
+           ng-class="{'search_tools_item': (currentSearchProjectData.currentOptions != searchProjectOptions.address), 'search_tools_item_selected': (currentSearchProjectData.currentOptions == searchProjectOptions.address || currentSearchProjectData.searchData.address.city > 0)}"
+           ng-click="onProjectSearchOptionSelected(searchProjectOptions.address)">
+        {{'TRANS_SEARCH_ALL_PLACE' | translate}}
+        <md-icon class="material-icons md-18 size_abs_18x18" ng-if="currentSearchProjectData.currentOptions != searchProjectOptions.address"> keyboard_arrow_down </md-icon>
+        <md-icon class="material-icons md-18 size_abs_18x18" ng-if="currentSearchProjectData.currentOptions == searchProjectOptions.address"> keyboard_arrow_up </md-icon>
+      </div>
+    </div>
+
+    <div flex="none">
+      <div layout="row" layout-align="start center"
+           ng-class="{'search_tools_item': (currentSearchProjectData.currentOptions != searchProjectOptions.price), 'search_tools_item_selected': (currentSearchProjectData.currentOptions == searchProjectOptions.price || currentSearchProjectData.searchData.price)}"
+           ng-click="onProjectSearchOptionSelected(searchProjectOptions.price)">
+        {{'TRANS_SEARCH_ALL_SELL_PRICE' | translate}}
+        <md-icon class="material-icons md-18 size_abs_18x18" ng-if="currentSearchProjectData.currentOptions != searchProjectOptions.price"> keyboard_arrow_down </md-icon>
+        <md-icon class="material-icons md-18 size_abs_18x18" ng-if="currentSearchProjectData.currentOptions == searchProjectOptions.price"> keyboard_arrow_up </md-icon>
+      </div>
+    </div>
+
+    <div flex="none">
+      <div class="search_tools_item" layout="row" layout-align="start center"
+           ng-class="{'search_tools_item': (currentSearchProjectData.currentOptions != searchProjectOptions.status), 'search_tools_item_selected': (currentSearchProjectData.currentOptions == searchProjectOptions.status || currentSearchProjectData.searchData.status)}"
+           ng-click="onProjectSearchOptionSelected(searchProjectOptions.status)">
+        {{'TRANS_SEARCH_ALL_STATUS' | translate}}
+        <md-icon class="material-icons md-18 size_abs_18x18" ng-if="currentSearchProjectData.currentOptions != searchProjectOptions.status"> keyboard_arrow_down </md-icon>
+        <md-icon class="material-icons md-18 size_abs_18x18" ng-if="currentSearchProjectData.currentOptions == searchProjectOptions.status"> keyboard_arrow_up </md-icon>
+      </div>
+    </div>
+
+    <div flex="none">
+      <div class="search_tools_item" layout="row" layout-align="start center"
+           ng-class="{'search_tools_item': (currentSearchProjectData.currentOptions != searchProjectOptions.type), 'search_tools_item_selected': (currentSearchProjectData.currentOptions == searchProjectOptions.type || currentSearchProjectData.searchData.type)}"
+           ng-click="onProjectSearchOptionSelected(searchProjectOptions.type)">
+        {{'TRANS_SEARCH_ALL_PROJECT_TYPE' | translate}}
+        <md-icon class="material-icons md-18 size_abs_18x18" ng-if="currentSearchProjectData.currentOptions != searchProjectOptions.type"> keyboard_arrow_down </md-icon>
+        <md-icon class="material-icons md-18 size_abs_18x18" ng-if="currentSearchProjectData.currentOptions == searchProjectOptions.type"> keyboard_arrow_up </md-icon>
+      </div>
+    </div>
+
+    <div flex="none">
+      <div class="search_tools_item" layout="row" layout-align="start center"
+           ng-class="{'search_tools_item': (currentSearchProjectData.currentOptions != searchProjectOptions.investor), 'search_tools_item_selected': (currentSearchProjectData.currentOptions == searchProjectOptions.investor || currentSearchProjectData.searchData.investor)}"
+           ng-click="onProjectSearchOptionSelected(searchProjectOptions.investor)">
+        {{'TRANS_SEARCH_ALL_INVESTOR' | translate}}
+        <md-icon class="material-icons md-18 size_abs_18x18" ng-if="currentSearchProjectData.currentOptions != searchProjectOptions.investor"> keyboard_arrow_down </md-icon>
+        <md-icon class="material-icons md-18 size_abs_18x18" ng-if="currentSearchProjectData.currentOptions == searchProjectOptions.investor"> keyboard_arrow_up </md-icon>
+      </div>
+    </div>
+
+    <div flex="none">
+      <div class="search_tools_item" layout="row" layout-align="start center"
+           ng-click="onClearSearchOptions()">
+        {{'TRANS_SEARCH_CLEAR' | translate}}
+      </div>
+    </div>
+
+    <div flex="none">
+      <div class="search_tools_item" layout="row" layout-align="start center"
+           ng-click="currentSearchProjectData.currentOptions = null;">
+        {{'TRANS_SEARCH_CLOSE' | translate}}
+      </div>
+    </div>
+  </div>
+  <!-- End Search options -->
+
+  <!-- Search details -->
+  <div class="search_tool_container" ng-show="currentSearchProjectData.currentOptions != null" >
+
+    <!-- Location Search Tools -->
+    <div class="advance_search_tools" ng-show="currentSearchProjectData.currentOptions == searchProjectOptions.address">
+      <div layout="row" layout-wrap>
+        <!-- Cities -->
+        <div flex="25" layout="row" layout-align="start start">
+          <qv-select model="currentSearchProjectData.searchData.address.city"
+                     items="selectCityConf.items"
+                     control="selectCityConf.control"
+                     label-key="selectCityConf.labelKey"
+                     placeholder="TRANS_SEARCH_ALL_CITY"
+                     on-selected="selectCityConf.onCitySelected"
+            ></qv-select>
+        </div>
+        <!-- End Cities -->
+        <!-- Areas -->
+        <div flex="25"
+             ng-if="currentSearchProjectData.searchData.address.city">
+          <qv-multi-select model="currentSearchProjectData.searchData.address.areas"
+                           items="selectAreasConf.items"
+                           button-label="{{selectAreasConf.buttonValue}}"
+                           item-label="{{selectAreasConf.itemLabel}}"
+                           tick-property="{{selectAreasConf.tickProperty}}"
+                           search-property="{{selectAreasConf.searchProperty}}"
+                           translation="selectAreasConf.translation"
+                           on-item-click="selectAreasConf.onAreaSelected"
+                           control="selectAreasConf.control"
+            ></qv-multi-select>
+        </div>
+        <!-- End Areas -->
+        <!-- Localities -->
+        <div flex="25"
+             ng-if="
+              currentSearchProjectData.searchData.address.city
+              && currentSearchProjectData.searchData.address.areas && currentSearchProjectData.searchData.address.areas.length > 0
+             ">
+          <qv-multi-select model="currentSearchProjectData.searchData.address.localities"
+                           items="selectLocalitiesConf.items"
+                           button-label="{{selectLocalitiesConf.buttonValue}}"
+                           item-label="{{selectLocalitiesConf.itemLabel}}"
+                           tick-property="{{selectLocalitiesConf.tickProperty}}"
+                           search-property="{{selectLocalitiesConf.searchProperty}}"
+                           translation="selectLocalitiesConf.translation"
+                           on-item-click="selectLocalitiesConf.onLocalitySelected"
+                           control="selectLocalitiesConf.control"
+            ></qv-multi-select>
+        </div>
+        <!-- End Localities -->
+        <!-- Routes -->
+        <div flex="25"
+             ng-if="
+              currentSearchProjectData.searchData.address.city
+              && currentSearchProjectData.searchData.address.areas && currentSearchProjectData.searchData.address.areas.length > 0
+              && currentSearchProjectData.searchData.address.localities && currentSearchProjectData.searchData.address.localities.length > 0
+             ">
+          <qv-multi-select model="currentSearchProjectData.searchData.address.routes"
+                           items="selectRoutesConf.items"
+                           button-label="{{selectRoutesConf.buttonValue}}"
+                           item-label="{{selectRoutesConf.itemLabel}}"
+                           tick-property="{{selectRoutesConf.tickProperty}}"
+                           search-property="{{selectRoutesConf.searchProperty}}"
+                           translation="selectRoutesConf.translation"
+                           on-item-click="selectRoutesConf.onRouteSelected"
+                           control="selectRoutesConf.control"
+            ></qv-multi-select>
+        </div>
+        <!-- End Routes -->
+      </div>
+    </div>
+    <!-- End Location Search Tools -->
+  </div>
+  <!-- End search details -->
+</div>

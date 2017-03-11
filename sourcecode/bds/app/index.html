@@ -1,0 +1,166 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Smart BDS</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
+    <link rel="stylesheet" href="bower_components/angular-busy/dist/angular-busy.css" />
+    <link rel="stylesheet" href="bower_components/isteven-angular-multiselect/isteven-multi-select.css" />
+    <link rel="stylesheet" href="bower_components/leaflet/dist/leaflet.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  </head>
+  <body ng-app="bdsApp" data-ng-controller="MainCtrl" class="{{(getPageTemplate()).bodyClass}}">
+    <!--[if lte IE 8]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- [if router is loading] -->
+    <div ng-if="!global.app.isViewReady()" class="router_loading_loader" layout="row" layout-align="center center">
+      <md-progress-circular md-mode="indeterminate" value="0" md-diameter="50"></md-progress-circular>
+    </div>
+    <!-- [endif] -->
+
+    <!-- [main body] -->
+    <div ng-if="global.app.isViewReady()" class="body_div" ng-cloak>
+
+      <!--header for the user app-->
+      <div class="header" ng-if="(getPageTemplate()).name == 'default'">
+        <div data-ng-include="'views/templates/default/app/partials/header.html'"></div>
+      </div>
+      <!--end header for the user app-->
+
+      <div layout="row" class="app_middle">
+        <!--left panel for the user app-->
+        <!--<div class="left_panel" flex="15" ng-if="(getPageTemplate()).name == 'default'">-->
+          <!--<div data-ng-include="'views/templates/default/app/partials/left.html'"></div>-->
+        <!--</div>-->
+        <!--left panel for the user app-->
+
+        <!--main view-->
+        <div flex class="{{(getPageTemplate()).class}}">
+          <div ng-view="" class="angular_main_view_container"></div>
+        </div>
+        <!--main view-->
+      </div>
+
+      <div class="footer" ng-if="(getPageTemplate()).name == 'default'">
+
+      </div>
+
+    </div>
+    <!-- [end main body] -->
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+     <script>
+       !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
+       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
+       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
+       }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+       ga('create', 'UA-XXXXX-X');
+       ga('send', 'pageview');
+    </script>
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-material/angular-material.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/angular-translate/angular-translate.js"></script>
+    <script src="bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.js"></script>
+    <script src="bower_components/angular-busy/dist/angular-busy.js"></script>
+    <script src="bower_components/isteven-angular-multiselect/isteven-multi-select.js"></script>
+    <script src="bower_components/angular-simple-logger/dist/angular-simple-logger.js"></script>
+    <script src="bower_components/lodash/lodash.js"></script>
+    <script src="bower_components/angular-google-maps/dist/angular-google-maps.js"></script>
+    <script src="bower_components/leaflet/dist/leaflet-src.js"></script>
+    <script src="bower_components/angular-leaflet-directive/dist/angular-leaflet-directive.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="scripts/app.js"></script>
+
+    <script src="components/_components.js"></script>
+    <script src="components/directives/controls/form/qvForm.js"></script>
+    <script src="components/directives/controls/pill/qvPill.js"></script>
+    <script src="components/directives/controls/multiSelect/qvMultiSelect.js"></script>
+    <script src="components/directives/controls/qvSelect/qvSelect.js"></script>
+    <script src="components/directives/input/keyboard/qvKeyboardInput.js"></script>
+    <script src="components/directives/dataDisplay/qvList/qvList.js"></script>
+    <script src="components/directives/qvHoverCard/qvHoverCard.js"></script>
+    <script src="components/directives/qvGoogleMap/qvGoogleMap.js"></script>
+    <script src="components/directives/qvLeafletMap/qvLeafletMap.js"></script>
+
+    <script src="components/services/http/httpRequest.js"></script>
+    <script src="components/services/notifications/toast/qvToast.js"></script>
+    <script src="components/services/array/arrayServices.js"></script>
+
+    <script src="scripts/components/_components.js"></script>
+    <script src="scripts/components/interceptor/http/httpProvider.js"></script>
+    <script src="scripts/components/events/routers/routers.js"></script>
+    <script src="scripts/components/events/localization/translator/translate.js"></script>
+    <script src="scripts/components/config/localization/translation/translation.js"></script>
+    <script src="scripts/components/config/googleMap/googleMap.js"></script>
+    <script src="scripts/components/constants/constants.js"></script>
+    <script src="scripts/components/services/location/router.js"></script>
+    <script src="scripts/components/services/template/template.js"></script>
+    <script src="scripts/components/services/session/session.js"></script>
+    <script src="scripts/components/services/session/appState.js"></script>
+    <script src="scripts/components/services/api/api.js"></script>
+    <script src="scripts/components/services/search/search.js"></script>
+
+    <script src="scripts/components/directives/controls/admin/loginForm/adminLoginForm/adminLoginForm.js"></script>
+    <script src="scripts/components/directives/sections/leftPanel/leftPanel.js"></script>
+    <script src="scripts/components/directives/sections/search/bdsSearch.js"></script>
+
+    <script src="scripts/model/_model.js"></script>
+    <script src="scripts/model/model/user.js"></script>
+    <script src="scripts/model/model/project.js"></script>
+    <script src="scripts/model/services/projectServices.js"></script>
+    <script src="scripts/model/model/investor.js"></script>
+    <script src="scripts/model/services/investorServices.js"></script>
+    <script src="scripts/model/model/addressComponent.js"></script>
+    <script src="scripts/model/services/geoServices.js"></script>
+    <script src="scripts/model/services/projectGeoStatisticServices.js"></script>
+
+    <script src="scripts/controllers/_controllers.js"></script>
+
+    <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/controllers/admin/login/js/login.module.js"></script>
+    <script src="scripts/controllers/admin/login/js/login.ctrl.js"></script>
+    <script src="scripts/controllers/admin/login/js/login.cf.js"></script>
+
+    <script src="scripts/controllers/app/home/js/home.module.js"></script>
+    <script src="scripts/controllers/app/home/js/home.ctrl.js"></script>
+    <script src="scripts/controllers/app/home/js/home.cf.js"></script>
+
+    <script src="scripts/controllers/app/search/js/search.module.js"></script>
+    <script src="scripts/controllers/app/search/js/search.ctrl.js"></script>
+    <script src="scripts/controllers/app/search/js/search.cf.js"></script>
+    <!-- endbuild -->
+
+    <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+</body>
+</html>

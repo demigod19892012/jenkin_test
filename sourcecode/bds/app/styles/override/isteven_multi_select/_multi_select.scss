@@ -1,0 +1,78 @@
+.multiSelect > button{
+  border-radius: 3px;
+  box-sizing: border-box;
+  color: currentColor;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  position: relative;
+  outline: none;
+  border: 0;
+  display: inline-block;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0 6px;
+  min-height: 36px;
+  background: transparent;
+  white-space: nowrap;
+  min-width: 88px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 14px;
+  font-style: inherit;
+  font-variant: inherit;
+  font-family: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  overflow: hidden;
+  transition: box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), background-color 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  border-bottom: 1px solid rgba(0,0,0,0.12);
+  padding-bottom: 1px;
+}
+
+.multiSelect > button:hover {
+  background-image: none;
+}
+
+.multiSelect > button:focus {
+  border-bottom: 2px solid $main_color;
+  padding-bottom: 0px;
+}
+
+.multiSelect .multiSelectItem:not(.multiSelectGroup).selected{
+  background-image: none;
+  color: black;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+.multiSelect .multiSelectItem{
+  outline: none;
+  color: black;
+}
+
+.multiSelect .multiSelectItem:hover, .multiSelect .multiSelectGroup:hover{
+  background-image: linear-gradient( #3498db, #3498db ) !important;
+  border: none !important;
+}
+
+.multiSelect .caret {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin: 0px 0px 1px 12px !important;
+  vertical-align: middle;
+  border-top: 8px solid black;
+  border-right: 7px solid transparent;
+  border-left: 7px solid transparent;
+  border-bottom: 0 dotted;
+}
+
+.multiSelect .helperButton{
+  background-color: white;
+  color: black;
+}

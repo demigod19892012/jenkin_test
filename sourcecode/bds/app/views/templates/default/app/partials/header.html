@@ -1,0 +1,41 @@
+<div ng-cloak>
+  <md-content>
+    <md-toolbar>
+      <div class="md-toolbar-tools toolbar">
+        <md-button class="md-icon-button" aria-label="Settings">
+          <a href="#/">
+            <md-icon class="material-icons md-light"> home </md-icon>
+          </a>
+        </md-button>
+        <span flex></span>
+        <h1>
+          <span>{{ 'TRANS_APP_NAME_CAP' | translate }}</span>
+        </h1>
+        <span flex></span>
+        <!-- Menu -->
+        <md-menu md-position-mode="target-right target" md-offset="-10 50" ng-if="global.currentUser">
+          <md-button class="md-icon-button" aria-label="More" ng-click="$mdOpenMenu($event)">
+            <md-icon class="material-icons md-light"> account_circle </md-icon>
+          </md-button>
+          <md-menu-content width="2" class="header_user_menu">
+            <md-menu-item>
+              <md-button>
+                <md-icon class="material-icons"> dashboard </md-icon>
+                {{'TRANS_ADMIN_CONTROL_PANEL' | translate}}
+              </md-button>
+            </md-menu-item>
+            <md-menu-divider></md-menu-divider>
+
+            <md-menu-item>
+              <md-button ng-click="onLogOut($event)">
+                <md-icon class="material-icons"> exit_to_app </md-icon>
+                {{'TRANS_LOGOUT' | translate}}
+              </md-button>
+            </md-menu-item>
+          </md-menu-content>
+        </md-menu>
+        <!-- End Menu -->
+      </div>
+    </md-toolbar>
+  </md-content>
+</div>

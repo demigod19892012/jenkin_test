@@ -1,0 +1,44 @@
+<div class="project_hover_card md-whiteframe-3dp">
+  <md-whiteframe class="full">
+    <div style="height: 100px; overflow: hidden;" layout layout-align="center center">
+      <img src="{{(hookData.main_image && hookData.main_image.abs_url?hookData.main_image.abs_url:('http://placehold.it/350x100?text=SmartDBS'))}}" style="width: 100%" />
+    </div>
+
+    <div class="card_body">
+      <div style="text-align: center">
+        <h4 class="project_title">{{hookData.name}}</h4>
+      </div>
+
+      <div layout="row" layout-align="center start" class="text_bold">
+        <div flex="50">
+          <img src="themes/default/resources/icons/size_icon.png" class="size_25x25" />
+          {{hookData.size()}}
+        </div>
+        <div flex="50">
+          <img src="themes/default/resources/icons/land_money_icon.png" class="size_20x20" />
+          {{hookData.avgPrice()}}
+        </div>
+      </div>
+
+      <div layout="row" layout-align="center start" style="margin-top:10px">
+        <div flex="50">
+          <img src="themes/default/resources/icons/construct_icon.png" class="size_25x25" />
+          {{hookData.process() | translate}} ({{hookData.per_construct_complete}}%)
+        </div>
+        <div flex="50">
+          <img src="themes/default/resources/icons/complete_icon.png" class="size_20x20" />
+          <span ng-if="hookData.per_construct_complete == 100">{{hookData.end_construct_date}}</span>
+          <span ng-if="hookData.per_construct_complete != 100">{{hookData.end_construct_plan_date}}</span>
+        </div>
+      </div>
+
+      <div layout="row" layout-align="start start" style="margin-top:10px">
+        <div flex="100">
+          <img src="themes/default/resources/icons/address_icon.png" class="size_25x25" />
+          {{hookData.address_data.full_text}}
+        </div>
+      </div>
+    </div>
+
+  </md-whiteframe>
+</div>

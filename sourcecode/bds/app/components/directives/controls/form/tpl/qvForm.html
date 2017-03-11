@@ -1,0 +1,15 @@
+<div>
+  <md-progress-linear ng-if="loader.loading" md-mode="indeterminate"></md-progress-linear>
+  <div ng-form name="{{formConfig.name}}" id="{{formConfig.id}}" ng-init="initForm(this)" ng-cloak>
+    {{fields}}
+    <md-content>
+      <section layout="column" data-ng-repeat="section in formConfig.fields" name="{{section.name}}" >
+        <md-subheader ng-if="section.title">{{section.title}}</md-subheader>
+
+        <div layout="{{(fieldGroup.length > 1)?'row':'column'}}" layout-sm="column" data-ng-repeat="fieldGroup in section.fields">
+          <div data-ng-repeat="field in fieldGroup" data-ng-include="getInputTemplate(field)"></div>
+        </div>
+      </section>
+    </md-content>
+  </div>
+</div>

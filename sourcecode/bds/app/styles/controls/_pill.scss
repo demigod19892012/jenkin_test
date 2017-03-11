@@ -1,0 +1,43 @@
+a.stats-pill{
+  border: 1px solid rgba(0, 0, 0, 0.09);
+  background-color: #ffffff;
+  border-radius: 25px;
+  height: 35px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+
+  .stats-pill__img{
+    padding: 0 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .stats-pill__separator{
+    border-right: 1px solid $separator_gray_color;
+    width: 1px;
+    height: 100%;
+  }
+
+  .stats-pill__label{
+    font-weight: bold;
+    padding: 0 15px;
+  }
+
+  .stats-pill__label:hover{
+    text-decoration: none;
+  }
+
+  img.icon{
+    width: 24px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+a.stats-pill:hover{
+  text-decoration: none;
+}

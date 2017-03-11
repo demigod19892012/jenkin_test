@@ -1,0 +1,49 @@
+<div>
+  <div class="site_stat">
+    <div layout="row">
+      <div flex="40">
+        <qv-pill model="stats.total_investor"
+                 img="themes/default/resources/icons/investor_icon.png"
+                 src="/investors"
+                 tooltip_text="TRANS_INVESTORS"
+          ></qv-pill>
+      </div>
+
+      <div flex="50" flex-offset="10">
+        <qv-pill model="stats.total_project"
+                 img="themes/default/resources/icons/estate_icon.png"
+                 src="/projects"
+                 tooltip_text="TRANS_PROJECTS"
+          ></qv-pill>
+      </div>
+    </div>
+  </div>
+
+  <div class="left_panel_popular_list_container">
+    <h4 class="list_title">
+      {{'TRANS_POPULAR_PROJECTS' | translate}}
+    </h4>
+
+    <div class="popular_list">
+      <qv-list model="popularProjects" config="popularProjectsConfig"></qv-list>
+    </div>
+
+    <div layout="row" layout-align="end center" class="list_footer">
+      <a href="javascript:void(0);"> {{'TRANS_VIEW_ALL' | translate}} </a>
+    </div>
+  </div>
+
+  <div class="left_panel_popular_list_container">
+    <h4 class="list_title">
+      {{'TRANS_POPULAR_INVESTOR' | translate}}
+    </h4>
+
+    <div class="popular_list">
+      <qv-list model="popularInvestors" config="popularInvestorsConfig"></qv-list>
+    </div>
+
+    <div layout="row" layout-align="end center" class="list_footer">
+      <a href="javascript:void(0);"> {{'TRANS_VIEW_ALL' | translate}}</a>
+    </div>
+  </div>
+</div>

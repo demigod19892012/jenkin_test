@@ -1,0 +1,7 @@
+<div ng-if="field.validation && field.validation.message" ng-message-exp="getFieldValidationList(field)">
+  {{field.validation.message | translate}}
+</div>
+
+<div ng-if="field.validation && !field.validation.message && validation.message" data-ng-repeat="validation in field.validation.validations" ng-message="{{validation.type}}">
+  {{validation.message | translate}}
+</div>

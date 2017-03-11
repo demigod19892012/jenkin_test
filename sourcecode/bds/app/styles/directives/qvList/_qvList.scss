@@ -1,0 +1,62 @@
+.qvList{
+  .error_item{
+    width:100%;
+    padding: 5px 5px 5px 5px;
+    text-align: center;
+    color: $error_color;
+    border-top:$gray_border;
+    border-bottom:$gray_border;
+  }
+
+  .empty{
+    width:100%;
+    padding: 5px 5px 5px 5px;
+    text-align: center;
+    border-top:$gray_border;
+    border-bottom:$gray_border;
+  }
+
+  .loading{
+    width:100%;
+    padding: 5px 5px 5px 5px;
+    text-align: center;
+    height:40px;
+  }
+
+  .items{
+    .item_default{
+      text-align: left;
+      padding: 10px 0px 10px 0px;
+      border-bottom:$gray_border;
+    }
+
+    .left_panel_item_avatar{
+      display: inline-block;
+      height: 50px;
+      width: 50px;
+
+      .item_avatar{
+        height: 100%;
+        width: 100%;
+        border-radius: 50%;
+        box-shadow: 0 0 0 1px $gray_color;
+        background-color: white;
+        background-size: contain;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        overflow: hidden;
+
+        img{
+          max-height: 50px;
+          max-width: 50px;
+        }
+      }
+    }
+
+    .left_panel_item_label{
+      display: inline-block;
+      width: 150px;
+      padding-left: 10px;
+    }
+  }
+}

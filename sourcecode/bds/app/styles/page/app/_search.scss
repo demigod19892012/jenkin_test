@@ -1,0 +1,57 @@
+div.searchPage{
+  width: 100%;
+  height: 100%;
+
+  div.searchContainer{
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    background-color: rgba(51,72,95,0.8);
+    padding: 10px 10px 10px 10px;
+    color: white;
+
+    div.search_field_container{
+
+    }
+
+    .search_bar{
+      color: black;
+    }
+
+    .search_tools{
+      .material-icons{
+        color: white;
+      }
+    }
+  }
+}
+
+div.interestProjectMarkerDiv{
+  border: 2px solid white;
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: 0 1px 1px rgba(0,0,1,.3);
+  width: 266px;
+  height: 181px;
+
+  .interestImage{
+    width: 100%;
+    height: 100%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    span.interestLabel {
+      background: rgba(0,69,85,0.9);
+      position: absolute;
+      bottom: 0;
+      color: #8DFCF5 !important;
+    }
+
+    transition: all .2s ease-in-out;
+  }
+
+  .interestImage:hover {
+    transform: scale(1.5);
+  }
+}

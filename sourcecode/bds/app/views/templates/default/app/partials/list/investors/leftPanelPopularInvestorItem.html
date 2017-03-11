@@ -1,0 +1,10 @@
+<div layout="row" layout-align="start center" class="clickable" qv-hover-card qv-hover-tpl="views/templates/default/app/partials/hoverCard/investor/investorHoverCardTpl.html" qv-hook-data="item">
+  <div class="left_panel_item_avatar" layout="row" layout-align="center center">
+    <div class="item_avatar" layout="row" layout-align="center center">
+      <img src="{{(item.logo && item.logo.abs_url?item.logo.abs_url:'themes/default/resources/icons/investor_icon.png')}}" alt="{{(item.logo)?item.logo.cap_text:item.name}}"></img>
+    </div>
+  </div>
+  <div class="left_panel_item_label" layout="row" layout-align="start center">
+    {{item.name}}
+  </div>
+</div>

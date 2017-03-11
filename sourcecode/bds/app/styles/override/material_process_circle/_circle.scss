@@ -1,0 +1,11 @@
+md-progress-circular.md-default-theme, md-progress-circular .md-inner .md-left .md-half-circle, md-progress-circular.md-default-theme, md-progress-circular .md-inner .md-right .md-half-circle{
+  border-top-color: $main_color;
+}
+
+md-progress-circular.md-default-theme, md-progress-circular .md-inner .md-right .md-half-circle{
+  border-right-color: $main_color;
+}
+
+md-progress-circular.md-default-theme, md-progress-circular .md-inner .md-left .md-half-circle{
+  border-left-color: $main_color;
+}

@@ -1,0 +1,11 @@
+.multiSelect > button{
+  text-transform: none;
+  min-height: 28px !important;
+  padding: 0 0 0 0;
+
+  .caret{
+    border-right: 6px solid transparent;
+    border-left: 6px solid transparent;
+  }
+
+}

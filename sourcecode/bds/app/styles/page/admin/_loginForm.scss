@@ -1,0 +1,34 @@
+div.admin_login_form{
+  width: 400px;
+  height: 420px;
+}
+
+div.admin_login_form_header{
+  width: 100%;
+  height: 115px;
+  background: #ff6545;
+  padding: 25px 98px;
+  color: white;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+div.admin_login_form_body{
+  width: 100%;
+  height: 320px;
+  padding: 25px;
+  background: white;
+
+  form.admin_login_form_container{
+    width: 100%;
+  }
+}
+
+div.admin_login_form_footer{
+  width: 100%;
+  text-align: center;
+  font-size: 10px;
+  color: $small_text_gray_color;
+  margin-left: auto;
+  margin-right: auto;
+}

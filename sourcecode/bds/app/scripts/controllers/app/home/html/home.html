@@ -1,0 +1,25 @@
+<div ng-controller="HomepageCtrl" class="homepage">
+  <div layout="row" class="fullsize">
+    <!--search-->
+    <div flex="50" class="fullsize">
+      <div class="resultPage">
+        <div class="search_container">
+          <bds-search config="search" events="searchEvents"></bds-search>
+        </div>
+      </div>
+    </div>
+    <!--end search-->
+    <!--map-->
+    <div flex="50" class="fullsize">
+      <qv-leaflet-map
+        control="map.control"
+        map-id="map-search"
+        center="map.center"
+        map-controls="map.mapControls"
+        events="map.events"
+        >
+      </qv-leaflet-map>
+    </div>
+    <!--end map-->
+  </div>
+</div>

@@ -1,0 +1,19 @@
+.header{
+  .toolbar{
+    background-color: $header_color;
+  }
+
+
+  h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 40px;
+    padding-bottom: 19px;
+  }
+}
+
+.header_user_menu {
+  md-menu-item > .md-button{
+    font-size: 14px;
+  }
+}

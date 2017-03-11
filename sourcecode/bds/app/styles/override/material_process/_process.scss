@@ -1,0 +1,8 @@
+md-progress-linear.md-default-theme, md-progress-linear .md-bar{
+  background-color: $main_color;
+}
+
+md-progress-linear.md-default-theme .md-container, md-progress-linear .md-container{
+  background-color: $progress_bar_background;
+}
+

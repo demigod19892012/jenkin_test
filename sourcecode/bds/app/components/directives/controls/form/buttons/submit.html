@@ -1,0 +1,6 @@
+<md-input-container>
+  <md-button md-no-ink class="md-primary"
+             ng-disabled="!directive[formConfig.name].$valid || fieldDisableCheck(field)"
+             ng-click="onSubmit()"
+    >{{( (field.label)?field.label:'Submit' ) | translate}}</md-button>
+</md-input-container>

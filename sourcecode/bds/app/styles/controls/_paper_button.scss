@@ -1,0 +1,24 @@
+.paper-button {
+  display: inline-block;
+  box-sizing: border-box;
+  background: transparent;
+  text-align: center;
+  font: inherit;
+  outline: none;
+  border-radius: 3px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  z-index: 0;
+  white-space: nowrap;
+}
+
+.paper-button-primary {
+  color: white;
+  font-weight: bold;
+  background-color: $main_color;
+  border: none;
+  padding: 10px 10px 10px 10px;
+}

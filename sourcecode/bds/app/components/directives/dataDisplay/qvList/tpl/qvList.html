@@ -1,0 +1,31 @@
+<div class="qvList {{(listConfig.class)?listConfig.class:''}}" id="{{(listConfig.name)?listConfig.name:''}}" style="width:100%">
+  <div class="error_item"
+    ng-if="state.error">
+    {{ ((state.errorMessage)?state.errorMessage: 'Error occured. Cannot display items.') | translate}}
+  </div>
+
+  <div class="empty"
+       ng-if="!state.error && !state.isLoading && (!listModel || listModel.length == 0)">
+    {{ listConfig.messages.empty | translate}}
+  </div>
+
+  <div class="loading" layout="row" layout-align="center center"
+       ng-if="state.isLoading">
+    <md-progress-circular md-mode="indeterminate" value="0" md-diameter="25"></md-progress-circular>
+  </div>
+
+  <div class="items"
+       ng-if="!state.error && !state.isLoading && listModel && listModel.length > 0">
+    <div class="item_default"
+         ng-if="!listConfig.itemTemplateUrl"
+         data-ng-repeat="item in listModel">
+      {{item}}
+    </div>
+
+    <div ng-if="listConfig.itemTemplateUrl"
+         data-ng-repeat="item in listModel"
+         data-ng-include="listConfig.itemTemplateUrl">
+      {{item}}
+    </div>
+  </div>
+</div>

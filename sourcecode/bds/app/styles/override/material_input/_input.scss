@@ -1,0 +1,20 @@
+md-input-container.md-default-theme:not(.md-input-invalid).md-input-focused, md-input-container:not(.md-input-invalid).md-input-focused label{
+  color: $main_color;
+}
+
+md-input-container.md-default-theme:not(.md-input-invalid).md-input-focused, md-input-container:not(.md-input-invalid).md-input-focused .md-input{
+  border-color: $main_color;
+}
+
+md-select-menu.md-default-theme, md-select-menu md-option[selected] {
+  color: $main_color;
+}
+
+md-select.md-default-theme:not([disabled]):focus, md-select:not([disabled]):focus .md-select-value {
+  border-bottom-color: $main_color;
+  color: rgba(0,0,0,0.87);
+}
+
+md-select.md-default-theme, md-select .md-select-value {
+  border-radius: 3px;
+}

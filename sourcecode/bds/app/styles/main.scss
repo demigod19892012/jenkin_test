@@ -1,0 +1,90 @@
+$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+// bower:scss
+@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+// endbower
+
+@import "global/_var.scss";
+@import "override/material_process_circle/_circle.scss";
+@import "override/material_input/_input.scss";
+@import "override/material_button/_buttons.scss";
+@import "override/material_process/_process.scss";
+@import "override/material_toast/_toast.scss";
+@import "override/material_icon/_icon.scss";
+@import "override/angular_google_maps/_map.scss";
+@import "override/isteven_multi_select/multi_select.scss";
+@import "controls/_pill.scss";
+@import "controls/_paper_button.scss";
+@import "directives/qvList/_qvList.scss";
+@import "directives/qvHoverCard/_qvHoverCard.scss";
+@import "directives/qvLeafletMap/_qvLeafletMap.scss";
+@import "directives/qvMultiSelect/_qvMultiSelect.scss";
+@import "common/_common.scss";
+@import "common/_text.scss";
+@import "common/_size.scss";
+@import "common/_shadow.scss";
+@import "sections/_header.scss";
+@import "sections/_left.scss";
+@import "page/_page.scss";
+@import "page/admin/_login.scss";
+@import "page/admin/_loginForm.scss";
+@import "page/app/_home.scss";
+@import "page/app/_search.scss";
+@import "text/_text.scss";
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+body {
+  padding: 0;
+}
+
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+
+  .btn {
+    font-size: 21px;
+    padding: 14px 24px;
+  }
+}
+
+/* Supporting marketing content */
+.marketing {
+  margin: 40px 0;
+
+  p + h4 {
+    margin-top: 28px;
+  }
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 730px;
+  }
+
+  /* Remove the padding we set earlier */
+  .header,
+  .marketing,
+  .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  /* Space out the masthead */
+  .header {
+
+  }
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+  }
+}

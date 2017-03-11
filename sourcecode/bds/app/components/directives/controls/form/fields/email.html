@@ -1,0 +1,13 @@
+<md-input-container>
+  <label ng-if="field.label">{{ field.label | translate}}</label>
+  <input type="email" id="{{field.name}}" name="{{field.name}}" ng-model="formModel[field.name]"
+         aria-label="qvEmail"
+         ng-enter="fieldEvent(field, 'onEnter')"
+         ng-disabled="fieldDisableCheck(field)"
+         ng-attr-required="{{getValidationValueOfField(field, 'required')}}"
+         ng-attr-minlength="{{getValidationValueOfField(field, 'minlength')}}"
+         ng-attr-maxlength="{{getValidationValueOfField(field, 'maxlength')}}"
+         ng-pattern="/^.+@.+\..+$/" />
+  <div ng-messages="directive[formConfig.name][field.name].$error" ng-show="willShowValidationMessage(field)" role="alert" data-ng-include="getValidationTemplate(field)">
+  </div>
+</md-input-container>

@@ -1,0 +1,19 @@
+<div ng-controller="SearchCtrl" class="searchPage">
+  <qv-leaflet-map ng-if="map"
+    control="map.control"
+    map-id="map-country-overview"
+    max-zoom="{{map.maxZoom}}"
+    min-zoom="{{map.minZoom}}"
+    center="map.center"
+    geo-json="map.geoJson"
+    geo-json-style="map.geoJsonStyle"
+    geo-json-popup="map.geoJsonPopup"
+    map-controls="map.mapControls"
+    events="map.events"
+    >
+  </qv-leaflet-map>
+
+  <div class="searchContainer">
+    <bds-search config="searchConfig"></bds-search>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+a.md-button.md-default-theme.md-primary, a.md-button.md-primary, .md-button.md-default-theme.md-primary, .md-button.md-primary{
+  color: $main-color;
+}
+
+a.md-button.md-default-theme.md-primary:not([disabled]), a.md-button.md-primary:not([disabled]) md-icon, .md-button.md-default-theme.md-primary:not([disabled]), .md-button.md-primary:not([disabled]) md-icon{
+  color: $main-color;
+}
+
+.md-button{
+  font-weight: 900;
+}
+
+a.md-button.md-default-theme.md-primary.md-raised, a.md-button.md-primary.md-raised, a.md-button.md-default-theme.md-primary.md-fab, a.md-button.md-primary.md-fab, .md-button.md-default-theme.md-primary.md-raised, .md-button.md-primary.md-raised, .md-button.md-default-theme.md-primary.md-fab, .md-button.md-primary.md-fab{
+  color: rgba(255,255,255,0.87);
+  background-color: $main-color;
+}
+
+a.md-button.md-default-theme.md-primary.md-raised:not([disabled]):hover, a.md-button.md-primary.md-raised:not([disabled]):hover, a.md-button.md-default-theme.md-primary.md-fab:not([disabled]):hover, a.md-button.md-primary.md-fab:not([disabled]):hover, .md-button.md-default-theme.md-primary.md-raised:not([disabled]):hover, .md-button.md-primary.md-raised:not([disabled]):hover, .md-button.md-default-theme.md-primary.md-fab:not([disabled]):hover, .md-button.md-primary.md-fab:not([disabled]):hover{
+  background-color: $main-color;
+}
+
+a.md-button.md-default-theme.md-primary.md-raised:not([disabled]).md-focused, a.md-button.md-primary.md-raised:not([disabled]).md-focused, a.md-button.md-default-theme.md-primary.md-fab:not([disabled]).md-focused, a.md-button.md-primary.md-fab:not([disabled]).md-focused, .md-button.md-default-theme.md-primary.md-raised:not([disabled]).md-focused, .md-button.md-primary.md-raised:not([disabled]).md-focused, .md-button.md-default-theme.md-primary.md-fab:not([disabled]).md-focused, .md-button.md-primary.md-fab:not([disabled]).md-focused{
+  background-color: $main-color;
+}
+
+
+
+
+
+

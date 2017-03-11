@@ -1,0 +1,5 @@
+<div>
+  <md-select class="{{(class)?class:''}}" placeholder="{{ ((placeholder)?placeholder:'Select one') | translate }}" ng-model="model" md-on-open="loadItems()" ng-change="onItemSelecte()">
+    <md-option ng-value="option" ng-repeat="option in options">{{option[labelKey]}}</md-option>
+  </md-select>
+</div>

@@ -1,0 +1,14 @@
+<a class="stats-pill" href="{{src?src:'javascript:void(0);'}}" style="{{(width?('width:' + width):'')}}">
+  <span class="stats-pill__img">
+    <img class="icon" src="{{img}}">
+  </span>
+  <span class="stats-pill__separator">
+  </span>
+  <span class="stats-pill__label">
+  {{model}}
+  </span>
+
+  <md-tooltip md-direction="{{tooltipDirection?tooltipDirection:'bottom'}}" ng-if="tooltipText">
+    {{ tooltipText | translate }}
+  </md-tooltip>
+</a>

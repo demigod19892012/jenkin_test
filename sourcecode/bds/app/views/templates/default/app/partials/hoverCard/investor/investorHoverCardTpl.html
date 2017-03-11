@@ -1,0 +1,41 @@
+<div class="investor_hover_card md-whiteframe-3dp">
+  <div class="header" layout="row" layout-align="start end">
+    <h4 class="investor_title">{{hookData.name}} <span ng-if="hookData.code">- {{hookData.code}}</span></h4>
+  </div>
+
+  <div class="card_body">
+    <div class="card_icon_holder">
+      <div class="card_icon">
+        <img src="{{(hookData.logo && hookData.logo.abs_url?hookData.logo.abs_url:('http://placehold.it/60x60?text=SmartDBS'))}}">
+      </div>
+    </div>
+
+    <div class="card_info">
+      <div layout="row" layout-align="center start" class="text_bold">
+        <div flex="50">
+          <img src="themes/default/resources/icons/estate_icon.png" class="size_25x25" />
+          <span translate="{{ 'TRANS_INVESTOR_TOTAL_PROJECT' }}" translate-values="{ total: hookData.total_project }"></span>
+        </div>
+        <div flex="50">
+
+        </div>
+      </div>
+
+      <div layout="row" layout-align="start start" style="margin-top:10px">
+        <div flex="100">
+          <img src="themes/default/resources/icons/website_icon.png" class="size_25x25" />
+          <span ng-if="hookData.website_url">{{hookData.website_url}}</span>
+          <span ng-if="!hookData.website_url">{{'TRANS_NOT_UPDATE_YET' | translate}}</span>
+        </div>
+      </div>
+
+      <div layout="row" layout-align="start start" style="margin-top:10px">
+        <div flex="100">
+          <img src="themes/default/resources/icons/address_icon.png" class="size_25x25" />
+          <span ng-if="hookData.address">{{hookData.address_data.full_text}}</span>
+          <span ng-if="!hookData.address">{{'TRANS_NOT_UPDATE_YET' | translate}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
